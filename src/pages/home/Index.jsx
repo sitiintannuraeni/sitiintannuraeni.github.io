@@ -1,11 +1,12 @@
 import {Button, Collapse, IconButton, Navbar, Typography} from "@material-tailwind/react";
-import {Bars3Icon, HeartIcon, XMarkIcon} from "@heroicons/react/16/solid/index.js";
+import {Bars3Icon, XMarkIcon} from "@heroicons/react/16/solid/index.js";
 import {useEffect, useState} from "react";
 import logo from "../../assets/logo.png";
 import banner from "../../assets/banner-1.png";
 import product1 from "../../assets/product1.png";
 import product2 from "../../assets/product2.png";
 import bgParfum from "../../assets/bgParfum.png"
+import {HeartIcon} from "@heroicons/react/24/outline/index.js";
 
 function NavList() {
   return (
@@ -100,21 +101,21 @@ function CardProduct(props) {
     <>
       <div className="bg-image relative">
         <img src={props.img} alt="product-img" className="rounded-lg w-full relative z-10" height={300}/>
-        <div className="h-8 w-8 absolute z-20 rounded-full bg-white top-2 right-2 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-          </svg>
+        <div className="absolute z-20 top-2 right-2 bg-transparent">
+          <IconButton variant="text" size="sm" className="rounded-full bg-white">
+            <HeartIcon className="h-4 w-4" />
+          </IconButton>
         </div>
-        <Button variant="outlined" size="lg" className="lg:flex hidden bg-black !bg-opacity-20 border-white border-[1px] text-white gap-2 justify-center items-center absolute z-20 bottom-2 right-2">
+        <Button variant="outlined" size="lg" className="px-3 lg:flex hidden bg-black !bg-opacity-20 border-white border-[1px] text-white gap-2 justify-center items-center absolute z-20 bottom-2 right-2">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
           </svg>
-          <Typography>Quick View</Typography>
+          <Typography className="font-['Helvetica'] font-medium">Quick View</Typography>
         </Button>
       </div>
       <div className="bg-body py-2">
-        <div className="flex lg:justify-between flex-col justify-start items-start">
+        <div className="flex flex-col justify-start items-start lg:items-center lg:flex-row lg:justify-between">
           <Typography variant="small" className="font-['Helvetica'] font-semibold">
             Elegant basic shirt black
           </Typography>
@@ -122,10 +123,10 @@ function CardProduct(props) {
             Rp 185.000
           </Typography>
         </div>
-        <Typography variant="small" className="text-black text-[13px] font-medium">
+        <Typography variant="small" className="font-['Helvetica'] text-black text-[13px] font-medium">
           XLS S M
         </Typography>
-        <Typography variant="small" className="text-[#7D7D7D] font-medium text-[13px]">
+        <Typography variant="small" className="font-['Helvetica'] text-[#7D7D7D] font-medium text-[13px]">
           10.3080 sold out
         </Typography>
       </div>
